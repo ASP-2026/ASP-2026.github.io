@@ -126,6 +126,7 @@ section{padding:94px 0}
 .programme-note{text-align:center;font-size:12px;color:var(--muted);margin-top:25px}
 
 /* VENUE */
+/*
 .venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
 .venue-photo{height:400px;background:linear-gradient(0deg,rgba(16,43,70,.22),rgba(16,43,70,.05)),url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85") center/cover;border-radius:var(--radius)}
 .venue-text p{font-size:15px;line-height:1.9;color:var(--muted)}
@@ -134,8 +135,9 @@ section{padding:94px 0}
 .venue-address strong{display:block;color:var(--navy);font-size:15px;margin-bottom:5px}
 .venue-address span{font-size:13px;line-height:1.75;color:var(--muted)}
 .venue-links{display:flex;gap:12px;flex-wrap:wrap}
-
+*/
 /* GETTING THERE */
+/*
 .travel{background:var(--bg)}
 .travel-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:35px;align-items:stretch}
 .travel-cards{display:flex;flex-direction:column;gap:14px}
@@ -145,6 +147,156 @@ section{padding:94px 0}
 .travel-card p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}
 .map-wrap{background:#fff;padding:8px;border-radius:13px;border:1px solid var(--line);min-height:400px;box-shadow:var(--shadow)}
 .map-wrap iframe{width:100%;height:100%;min-height:400px;border:0;border-radius:8px;display:block}
+*/
+  
+/* =========================================
+   VENUE & DIRECTIONS
+   ========================================= */
+
+.venue{
+  background:#fff;
+}
+
+.venue-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+  margin-top:28px;
+}
+
+.venue-text h3{
+  font-family:var(--serif);
+  font-size:27px;
+  font-weight:600;
+  line-height:1.3;
+  color:var(--navy);
+  margin:0 0 20px;
+}
+
+.venue-text p{
+  font-size:16px;
+  line-height:1.85;
+  color:var(--muted);
+  margin:0 0 18px;
+}
+
+.venue-address{
+  display:flex;
+  align-items:flex-start;
+  gap:15px;
+  padding:20px 22px;
+  margin:25px 0;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-left:3px solid var(--teal);
+  border-radius:10px;
+}
+
+.venue-address-icon{
+  font-size:24px;
+  line-height:1.2;
+  color:var(--teal);
+}
+
+.venue-address strong{
+  display:block;
+  font-size:15px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:6px;
+}
+
+.venue-address span{
+  font-size:13.5px;
+  line-height:1.8;
+  color:var(--muted);
+}
+
+.venue-links{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+
+.btn-venue{
+  background:#fff;
+  color:var(--navy);
+  border:1px solid #C7D8E4;
+  box-shadow:none;
+}
+
+.btn-venue:hover{
+  background:var(--bg);
+  border-color:var(--teal);
+  color:var(--teal);
+  transform:translateY(-2px);
+}
+
+.venue-text .venue-hint{
+  font-size:12.5px;
+  line-height:1.7;
+  color:var(--muted);
+  margin:20px 0 0;
+}
+
+/* Embedded Google Map */
+
+.map-wrap{
+  background:#fff;
+  padding:8px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 18px 45px rgba(12,35,64,.09);
+  height:430px;
+  overflow:hidden;
+}
+
+.map-wrap iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  border-radius:9px;
+}
+
+/* Responsive */
+
+@media(max-width:850px){
+  .venue-grid{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+
+  .map-wrap{
+    height:380px;
+  }
+}
+
+@media(max-width:550px){
+  .venue-grid{
+    margin-top:20px;
+  }
+
+  .venue-text h3{
+    font-size:24px;
+  }
+
+  .venue-links{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .venue-links .btn{
+    width:100%;
+  }
+
+  .map-wrap{
+    height:330px;
+  }
+}
 
 /* REGISTRATION */
 .registration{background:var(--navy);color:#fff;padding:75px 0;text-align:center}
@@ -335,13 +487,14 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
 
     <button class="mobile-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#overview">Overview</a>
-      <a href="#programme">Programme</a>
-      <a href="#venue">Venue</a>
-      <a href="#travel">Getting There</a>
-      <a class="nav-register" href="https://www.eventbrite.com.au/e/australian-signal-processing-meeting-tickets-2003494324457" target="_blank" rel="noopener noreferrer">Register ↗</a>
-    </nav>
+    
+<nav class="nav-links" id="navLinks">
+  <a href="#overview">Overview</a>
+  <a href="#programme">Programme</a>
+  <a href="#venue">Venue & Directions</a>
+  <a class="nav-register" href="https://www.eventbrite.com.au/e/australian-signal-processing-meeting-tickets-2003494324457" target="_blank" rel="noopener noreferrer">Register ↗</a>
+</nav>
+
   </div>
 </header>
 
@@ -660,6 +813,7 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
 </section>
 
 <!-- VENUE -->
+  <!--
 <section id="venue">
   <div class="wrap venue-grid">
     <div class="venue-photo" role="img" aria-label="Illustrative coastal resort photograph"></div>
@@ -693,8 +847,9 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
     </div>
   </div>
 </section>
-
+-->
 <!-- GETTING THERE -->
+  <!--
 <section id="travel" class="travel">
   <div class="wrap">
     <span class="section-label">Travel Information</span>
@@ -761,6 +916,89 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
         </iframe>
       </div>
     </div>
+  </div>
+</section>
+-->
+  
+<!-- VENUE & DIRECTIONS -->
+<section id="venue" class="venue">
+  <div class="wrap">
+
+    <span class="section-label">Meeting Location</span>
+    <h2 class="section-heading">Venue & Directions</h2>
+
+    <div class="venue-grid">
+
+      <!-- Venue information -->
+      <div class="venue-text">
+
+        <h3>Sea World Resort</h3>
+
+        <p>
+          The Australian Signal Processing Meeting will be held
+          at <strong>Sea World Resort</strong>, located in Main Beach
+          on the Gold Coast, Queensland.
+        </p>
+
+        <p>
+          Situated along the Gold Coast Broadwater, the resort
+          provides a welcoming setting for the meeting.
+          Visitors can use Google Maps to plan their journey
+          by car or public transport.
+        </p>
+
+        <div class="venue-address">
+          <div class="venue-address-icon">⌖</div>
+
+          <div>
+            <strong>Sea World Resort</strong>
+            <span>
+              Seaworld Drive, Main Beach<br>
+              Gold Coast, Queensland 4217, Australia
+            </span>
+          </div>
+        </div>
+
+        <div class="venue-links">
+
+          <a class="btn btn-primary"
+             href="https://www.google.com/maps/search/?api=1&query=Sea+World+Resort+Main+Beach+QLD"
+             target="_blank"
+             rel="noopener noreferrer">
+            View on Google Maps ↗
+          </a>
+
+          <a class="btn btn-venue"
+             href="https://seaworldresort.com.au/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Sea World Resort Website ↗
+          </a>
+
+        </div>
+
+        <p class="venue-hint">
+          For driving directions and public transport options,
+          select the venue in Google Maps.
+        </p>
+
+      </div>
+
+      <!-- Interactive Google Map -->
+      <div class="map-wrap">
+
+        <iframe
+          title="Google Map showing Sea World Resort, Main Beach, Gold Coast"
+          src="https://www.google.com/maps?q=Sea%20World%20Resort%2C%20Main%20Beach%2C%20QLD&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+    </div>
+
   </div>
 </section>
 
