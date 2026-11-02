@@ -190,6 +190,139 @@ footer{background:#0A2035;color:#AFC4D4;padding:35px 0}
   .footer-inner{flex-direction:column;align-items:flex-start}
 }
 </style>
+
+
+/* ==========================================================
+   ASPM 2026 – professional upgrade (override layer)
+   1) Replace your Google Fonts <link> with:
+   https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap
+   2) Paste this CSS AFTER your existing <style> block.
+   ========================================================== */
+
+:root{
+  --navy:#0C2340;
+  --navy2:#14375A;
+  --teal:#0A8A92;
+  --teal-light:#E4F3F3;
+  --gold:#C9A25E;
+  --text:#22364A;
+  --muted:#556A7E;
+  --bg:#F3F7FA;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='320' viewBox='0 0 1200 320'%3E%3Cg fill='none' stroke='%23ffffff'%3E%3Cpath stroke-opacity='.14' stroke-width='1.6' d='M0 160 C100 40 200 280 300 160 S500 40 600 160 S800 280 900 160 S1100 40 1200 160'/%3E%3Cpath stroke-opacity='.09' stroke-width='1.2' d='M0 185 C120 90 180 280 300 185 S480 90 600 185 S780 280 900 185 S1080 90 1200 185'/%3E%3Cpath stroke-opacity='.06' stroke-width='1' d='M0 130 C80 20 220 240 300 130 S520 20 600 130 S820 240 900 130 S1120 20 1200 130'/%3E%3C/g%3E%3C/svg%3E");
+  --dots:radial-gradient(rgba(12,35,64,.09) 1px,transparent 1.2px);
+}
+
+/* ---------- Typography ---------- */
+body{font-family:var(--sans);font-size:16px;line-height:1.7;color:var(--text)}
+h1,h2,h3,h4{font-family:var(--serif);letter-spacing:-.015em;font-weight:600}
+.hero h1{font-weight:600;line-height:1.1;letter-spacing:-.025em;text-wrap:balance}
+.hero h1 em,.hero h1 span{color:var(--gold);font-style:italic}
+.section-heading{font-size:clamp(30px,3.4vw,44px);line-height:1.2;position:relative;padding-bottom:18px}
+.section-heading:after{content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+.programme-header .section-heading:after{left:50%;transform:translateX(-50%)}
+.section-label{font-family:var(--mono);font-size:12px;letter-spacing:.18em;font-weight:600}
+.section-intro,.overview-copy p,.venue-text p{font-size:17px;line-height:1.75}
+.hero-description{font-size:18px;line-height:1.75;color:#D9E6F0}
+.session p,.travel-card p,.fact p,.highlight-row p{font-size:14.5px;line-height:1.7}
+.session h4{font-size:16.5px}
+.session-time,.fact-label,.day-tab span,.session-tag,.brand-text span,.hero-eyebrow{font-family:var(--mono)}
+
+/* ---------- Header ---------- */
+.site-header{background:rgba(255,255,255,.88);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 1px 0 var(--line),0 8px 30px rgba(12,35,64,.04)}
+.brand-mark{background:linear-gradient(135deg,var(--navy),var(--teal));box-shadow:0 6px 16px rgba(10,138,146,.3)}
+.nav-links a:not(.nav-register){position:relative}
+.nav-links a:not(.nav-register):after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .25s}
+.nav-links a:not(.nav-register):hover:after{width:100%}
+.nav-links .nav-register{background:linear-gradient(135deg,var(--navy),var(--navy2));box-shadow:0 6px 18px rgba(12,35,64,.25)}
+
+/* ---------- Hero: layered waveform + glows ---------- */
+.hero{
+  background:
+    var(--wave) center 72%/1500px auto repeat-x,
+    radial-gradient(900px 520px at 88% 8%,rgba(10,138,146,.50),transparent 62%),
+    radial-gradient(700px 420px at 0% 105%,rgba(201,162,94,.22),transparent 60%),
+    linear-gradient(115deg,rgba(8,26,48,.97) 0%,rgba(13,42,70,.93) 55%,rgba(8,60,78,.82) 100%),
+    url("https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+}
+.hero-eyebrow{color:#BFE6E4;letter-spacing:.2em}
+.hero-info-icon{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.28);backdrop-filter:blur(6px)}
+.btn{border-radius:10px;letter-spacing:.01em}
+.btn-primary{background:linear-gradient(135deg,var(--teal),#0B6F8A);box-shadow:0 10px 26px rgba(10,138,146,.38)}
+.btn-primary:hover{background:linear-gradient(135deg,#0C9AA3,#0B7A96);box-shadow:0 14px 32px rgba(10,138,146,.5)}
+.btn-outline{backdrop-filter:blur(6px);background:rgba(255,255,255,.05)}
+
+/* ---------- Quick facts: glass panel with gold top rule ---------- */
+.facts-panel{border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.94);backdrop-filter:blur(14px);box-shadow:0 24px 60px rgba(12,35,64,.14);position:relative;overflow:hidden}
+.facts-panel:before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold))}
+.fact strong{font-family:var(--serif);font-size:18px;font-weight:600}
+
+/* ---------- Section backgrounds (no more flat white) ---------- */
+.overview{
+  background:
+    radial-gradient(600px 300px at 100% 0%,rgba(10,138,146,.07),transparent 70%),
+    radial-gradient(500px 300px at 0% 100%,rgba(201,162,94,.08),transparent 70%),
+    #fff;
+}
+.programme{background:var(--dots) 0 0/24px 24px,linear-gradient(180deg,#F3F7FA,#EAF1F6)}
+.travel{background:var(--dots) 0 0/24px 24px,linear-gradient(180deg,#EEF4F8,#F7FAFC)}
+.registration{
+  background:
+    var(--wave) center/1400px auto repeat-x,
+    radial-gradient(700px 360px at 85% 0%,rgba(10,138,146,.4),transparent 65%),
+    linear-gradient(135deg,#0A1E38,#0F3050);
+  padding:96px 0;
+}
+.registration h2{font-weight:600}
+
+/* ---------- Cards & depth ---------- */
+.overview-card,.travel-card,.venue-address,.schedule{box-shadow:0 12px 40px rgba(12,35,64,.06);border-color:#DDE6EE}
+.overview-card{background:linear-gradient(180deg,#fff,#F6FAFC)}
+.overview-card:before{background:linear-gradient(90deg,var(--teal),var(--gold));width:72px}
+.travel-card{transition:transform .25s,box-shadow .25s,border-color .25s}
+.travel-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(12,35,64,.11);border-color:var(--teal)}
+.highlight-icon,.travel-card-icon{background:linear-gradient(135deg,var(--teal-light),#fff);border:1px solid #CFE8E8}
+.venue-photo{box-shadow:0 30px 60px rgba(12,35,64,.2);position:relative}
+.venue-photo:after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--gold);border-radius:var(--radius);z-index:-1;opacity:.7}
+.venue-grid{padding-right:14px}
+.map-wrap{box-shadow:0 20px 50px rgba(12,35,64,.1)}
+
+/* ---------- Programme: timeline feel ---------- */
+.day-tab{border-radius:12px;box-shadow:0 4px 14px rgba(12,35,64,.04)}
+.day-tab.active{background:linear-gradient(135deg,var(--navy),var(--navy2));box-shadow:0 14px 30px rgba(12,35,64,.28)}
+.day-tab strong{font-family:var(--serif);font-size:17px}
+.schedule-head{background:linear-gradient(90deg,#E9F1F6,#F4F8FB);border-bottom:1px solid var(--line)}
+.session{position:relative;transition:background .2s}
+.session:hover{background:#F8FBFD}
+.session:before{content:"";position:absolute;left:171px;top:31px;width:9px;height:9px;border-radius:50%;background:#fff;border:2px solid var(--teal)}
+.session:after{content:"";position:absolute;left:175px;top:44px;bottom:-31px;width:1px;background:var(--line)}
+.session:last-child:after{display:none}
+.session{grid-template-columns:145px 1fr;padding-left:30px}
+.session > div:last-child,.session > :nth-child(2){padding-left:34px}
+.session-time{font-size:13px;letter-spacing:.02em}
+.session-tag{border-radius:999px;padding:5px 12px;font-size:10.5px}
+.session.break:before{border-color:var(--gold);background:var(--gold)}
+
+/* ---------- Footer ---------- */
+footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90deg,var(--teal),var(--gold)) 1}
+
+/* ---------- Mobile adjustments ---------- */
+@media(max-width:850px){
+  .venue-grid{padding-right:0}
+  .venue-photo:after{display:none}
+}
+@media(max-width:550px){
+  .session:before,.session:after{display:none}
+  .session > div:last-child,.session > :nth-child(2){padding-left:0}
+  body{font-size:15.5px}
+}
+
+/* ---------- Accessibility ---------- */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
 </head>
 
 <body>
