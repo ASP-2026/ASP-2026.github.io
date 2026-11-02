@@ -118,6 +118,8 @@ section{padding:94px 0}
 .session{display:grid;grid-template-columns:145px 1fr;gap:24px;padding:24px 30px;border-bottom:1px solid var(--line);align-items:start}
 .session:last-child{border-bottom:0}
 .session-time{font-size:13px;font-weight:800;color:var(--teal);padding-top:4px}
+.session-time span{display:block}
+.session-duration{margin-top:5px;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.02em}
 .session h4{font-size:15px;margin:0 0 7px;color:var(--navy);line-height:1.5}
 .session p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
 .session-tag{display:inline-block;margin-top:10px;font-size:10px;letter-spacing:.6px;text-transform:uppercase;font-weight:800;color:var(--teal);background:var(--teal-light);padding:6px 10px;border-radius:5px}
@@ -547,7 +549,10 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
         </div>
 
         <div class="session">
-          <div class="session-time">08:30 – 09:00</div>
+          <div class="session-time">
+            <span>08:30 – 09:00</span>
+            <span class="session-duration">1/5 hrs</span>
+          </div>
           <div>
             <h4>Registration and Welcome</h4>
             <p>Arrival, registration and opening remarks.</p>
@@ -834,16 +839,14 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
         <h3>Sea World Resort</h3>
 
         <p>
-          The Australian Signal Processing Meeting will be held
+          The ASP Meeting will be held
           at <strong>Sea World Resort</strong>, located in Main Beach
           on the Gold Coast, Queensland.
         </p>
 
         <p>
-          Situated along the Gold Coast Broadwater, the resort
-          provides a welcoming setting for the meeting.
-          Visitors can use Google Maps to plan their journey
-          by car or public transport.
+          Situated along the Gold Coast Broadwater, the resort provides a welcoming setting for the meeting.
+          Visitors can use Google Maps to plan their journey by car or public transport.
         </p>
 
         <div class="venue-address">
