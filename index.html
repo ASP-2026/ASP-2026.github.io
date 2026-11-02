@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --navy:#102B46;
@@ -314,116 +314,6 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
 }
-  
-/* ==========================================
-   ASP 2026 — Refined Academic Conference Theme
-   Place at the END of the existing <style>
-   ========================================== */
-
-:root{
-  --navy:#17365D;
-  --navy2:#214A72;
-  --teal:#087E8B;
-  --teal-light:#E7F4F5;
-  --gold:#DB7C26;
-  --text:#25384B;
-  --muted:#62778B;
-  --bg:#F3F7FA;
-  --white:#FFFFFF;
-  --line:#E1E9F0;
-  --shadow:0 16px 44px rgba(23,54,93,.075);
-  --radius:16px;
-  --sans:"Inter",Arial,sans-serif;
-}
-
-/* Typography */
-body{font-family:var(--sans);color:var(--text);font-size:15.5px;line-height:1.75}
-h1,h2,h3,h4{font-family:"Manrope",var(--sans);font-weight:700;letter-spacing:-.028em}
-.hero h1{font-family:"Manrope",var(--sans);font-weight:800;letter-spacing:-.045em;line-height:1.12;font-style:normal}
-.hero h1 em,.hero h1 span{color:#8ED4D7;font-style:normal}
-.section-heading{font-family:"Manrope",var(--sans);font-size:clamp(30px,3.4vw,42px);font-weight:800}
-.section-heading:after{background:var(--teal);width:50px;height:3px}
-.section-label{font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:.16em}
-.hero-eyebrow,.session-time,.fact-label,.day-tab span,.session-tag,.brand-text span{font-family:var(--sans)}
-.fact strong,.day-tab strong{font-family:"Manrope",var(--sans)}
-
-/* Navigation */
-.site-header{background:rgba(255,255,255,.95);backdrop-filter:blur(18px);box-shadow:0 1px 12px rgba(23,54,93,.035)}
-.brand-mark{background:var(--navy);box-shadow:none;border-radius:10px;font-family:"Manrope",var(--sans)}
-.brand-text strong{font-family:"Manrope",var(--sans)}
-.nav-links a:not(.nav-register):after{background:var(--teal)}
-.nav-links .nav-register{background:var(--navy);box-shadow:none}
-.nav-links .nav-register:hover{background:var(--teal)}
-
-/* Hero */
-.hero{
-  background:
-    radial-gradient(650px 420px at 87% 20%,rgba(8,126,139,.24),transparent 75%),
-    linear-gradient(110deg,rgba(14,40,70,.97) 0%,rgba(23,54,93,.93) 56%,rgba(17,73,92,.80) 100%),
-    url("https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
-}
-.hero:before,.hero:after{border-color:rgba(255,255,255,.09)}
-.hero-eyebrow{color:#AFDCE0}
-.hero-eyebrow:before{background:#DB7C26}
-.hero-description{color:#D9E5EF}
-.hero-info-icon{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.23)}
-
-/* Buttons */
-.btn{font-family:var(--sans);font-weight:700;border-radius:8px}
-.btn-primary{background:var(--teal);box-shadow:0 6px 22px rgba(8,126,139,.20)}
-.btn-primary:hover{background:#086B76;box-shadow:0 9px 26px rgba(8,126,139,.28)}
-.btn-outline{background:rgba(255,255,255,.035)}
-.btn-light{background:#fff;color:var(--navy)}
-
-/* Quick facts */
-.facts-panel{background:rgba(255,255,255,.97);border:1px solid var(--line);box-shadow:0 20px 52px rgba(23,54,93,.10)}
-.facts-panel:before{background:var(--teal);height:3px}
-.fact strong{font-family:"Manrope",var(--sans);font-size:16px}
-
-/* Overview */
-.overview{background:#fff}
-.overview-card{background:#F6F9FC;border:1px solid var(--line);box-shadow:none}
-.overview-card:before{background:var(--teal);width:52px}
-.highlight-icon{background:#E7F4F5;color:var(--teal);border:none}
-
-/* Programme */
-.programme{background:linear-gradient(180deg,#F4F8FB,#EFF5F9)}
-.day-tab{border-radius:10px;box-shadow:none}
-.day-tab.active{background:var(--navy);box-shadow:0 10px 24px rgba(23,54,93,.17)}
-.day-tab strong{font-family:"Manrope",var(--sans);font-weight:700}
-.schedule{box-shadow:0 12px 35px rgba(23,54,93,.05)}
-.schedule-head{background:#EAF2F7}
-.session:hover{background:#F7FAFC}
-.session:before{border-color:var(--teal)}
-.session.break:before{border-color:#DB7C26;background:#DB7C26}
-.session-tag{border-radius:5px;font-weight:700}
-
-/* Venue */
-.venue-photo{box-shadow:0 20px 45px rgba(23,54,93,.13)}
-.venue-photo:after{border-color:var(--teal);opacity:.35}
-.venue-address{background:var(--bg);box-shadow:none}
-
-/* Travel */
-.travel{background:#F5F8FB}
-.travel-card{box-shadow:none;border:1px solid var(--line)}
-.travel-card:hover{transform:translateY(-3px);border-color:#AED2D7;box-shadow:0 12px 30px rgba(23,54,93,.07)}
-.travel-card-icon{background:var(--teal-light);border:none}
-.map-wrap{box-shadow:0 15px 38px rgba(23,54,93,.08)}
-
-/* Registration and footer */
-.registration{
-  background:linear-gradient(120deg,#123051 0%,#17365D 60%,#12616E 100%);
-  padding:88px 0;
-}
-.registration h2{font-family:"Manrope",var(--sans);font-weight:800}
-footer{background:#102B46;border-top:3px solid var(--teal);border-image:none}
-
-/* Responsive */
-@media(max-width:550px){
-  .hero h1{font-size:36px}
-  .section-heading{font-size:31px}
-}
-
 </style>
 
 
