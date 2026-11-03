@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,439 +5,211 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Australian Signal Processing Meeting, 8–9 December 2026, Sea World Resort, Gold Coast, Queensland.">
 <title>Australian Signal Processing Meeting 2026</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#102B46;
-  --navy2:#183D5C;
-  --teal:#087F86;
-  --teal-light:#E6F3F2;
-  --gold:#D7AA65;
-  --text:#25384A;
-  --muted:#617588;
-  --bg:#F5F8FB;
-  --white:#FFFFFF;
-  --line:#E3EAF0;
-  --shadow:0 15px 45px rgba(16,43,70,.08);
-  --radius:16px;
+  --navy:#0C2340; --navy2:#14375A; --teal:#0A7F88; --teal-soft:#E4F2F3;
+  --gold:#C9A25E; --text:#22364A; --muted:#566B7F; --bg:#F3F7FA; --line:#DDE6EE;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+  --hero-img:url("goldcoast.jpg"); /* change the path if the image sits in a subfolder, e.g. images/goldcoast.jpg */
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;font-family:"DM Sans",sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:"Manrope",sans-serif;letter-spacing:-.035em}
-a{text-decoration:none;color:inherit}
+body{margin:0;font-family:var(--sans);font-size:16px;line-height:1.7;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.015em;color:var(--navy);margin:0}
+a{color:inherit;text-decoration:none}
 button{font:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
-section{padding:94px 0}
-.section-label{display:inline-block;margin-bottom:14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--teal)}
-.section-heading{font-size:clamp(28px,3.2vw,40px);line-height:1.25;margin:0 0 20px;color:var(--navy)}
-.section-intro{font-size:16px;line-height:1.9;color:var(--muted);max-width:780px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 23px;font-weight:700;font-size:14px;border-radius:8px;transition:.25s}
+section{padding:96px 0}
+
+.section-label{display:block;margin-bottom:10px;font-size:14px;font-weight:600;color:var(--teal)}
+.section-heading{font-size:clamp(30px,3.4vw,42px);line-height:1.2;padding-bottom:18px;position:relative;margin-bottom:22px}
+.section-heading:after{content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+.section-intro{font-size:17px;color:var(--muted);max-width:720px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;font-size:15px;font-weight:600;border-radius:8px;transition:background .2s,border-color .2s}
 .btn-primary{background:var(--teal);color:#fff}
-.btn-primary:hover{background:#09686f;transform:translateY(-2px)}
-.btn-outline{border:1px solid rgba(255,255,255,.6);color:#fff}
-.btn-outline:hover{background:rgba(255,255,255,.12)}
+.btn-primary:hover{background:#086b73}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.75);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
 .btn-light{background:#fff;color:var(--navy)}
-.btn-light:hover{background:#eaf4f5}
+.btn-light:hover{background:#E9F3F4}
+.btn-venue{background:#fff;color:var(--navy);border:1px solid #C7D8E4}
+.btn-venue:hover{border-color:var(--teal);color:var(--teal)}
 
-/* NAVIGATION */
-.site-header{height:78px;background:rgba(255,255,255,.97);backdrop-filter:blur(15px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100}
+/* Header */
+.site-header{height:76px;position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:13px;flex-shrink:0}
-.brand-mark{width:43px;height:43px;border-radius:10px;background:var(--navy);display:grid;place-items:center;color:#fff;font-family:Manrope,sans-serif;font-size:16px;font-weight:800;letter-spacing:-1px}
-.brand-text{display:flex;flex-direction:column;gap:2px}
-.brand-text strong{font-family:Manrope,sans-serif;font-size:14px;letter-spacing:-.3px;color:var(--navy)}
-.brand-text span{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:13px}
+.brand-mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--teal));display:grid;place-items:center;color:#fff;font-weight:700;font-size:15px}
+.brand-text strong{display:block;font-family:var(--serif);font-size:16px;line-height:1.2;color:var(--navy)}
+.brand-text span{font-size:12.5px;color:var(--muted)}
 .nav-links{display:flex;align-items:center;gap:32px}
-.nav-links a{font-size:13px;font-weight:700;color:var(--navy);transition:.2s}
-.nav-links a:hover{color:var(--teal)}
-.nav-links .nav-register{padding:11px 17px;background:var(--navy);color:#fff;border-radius:7px}
-.nav-links .nav-register:hover{background:var(--teal);color:#fff}
-.mobile-toggle{display:none;background:none;border:0;font-size:25px;color:var(--navy);cursor:pointer}
+.nav-links a{font-size:14px;font-weight:600;color:var(--navy)}
+.nav-links a:not(.nav-register):hover{color:var(--teal)}
+.nav-links .nav-register{padding:10px 18px;background:var(--navy);color:#fff;border-radius:8px}
+.nav-links .nav-register:hover{background:var(--teal)}
+.mobile-toggle{display:none;background:none;border:0;font-size:26px;color:var(--navy);cursor:pointer}
 
-/* HERO */
-.hero{position:relative;min-height:590px;display:flex;align-items:center;overflow:hidden;color:#fff;background:linear-gradient(115deg,rgba(11,34,56,.96) 0%,rgba(15,48,74,.91) 52%,rgba(9,57,76,.72) 100%),url("https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat}
-.hero:after{content:"";position:absolute;right:-130px;top:-220px;width:600px;height:600px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none}
-.hero:before{content:"";position:absolute;right:-40px;top:-125px;width:420px;height:420px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none}
-.hero .wrap{position:relative;z-index:1;width:100%;padding-top:85px;padding-bottom:90px}
-.hero-eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#B5E1DF;margin-bottom:28px}
-.hero-eyebrow:before{content:"";width:30px;height:2px;background:var(--gold)}
-.hero h1{font-size:clamp(39px,5.4vw,68px);max-width:870px;line-height:1.14;font-weight:800;margin:0 0 28px}
-.hero-description{font-size:17px;line-height:1.85;max-width:650px;color:#D4E1EC;margin:0 0 34px}
-.hero-info{display:flex;align-items:center;flex-wrap:wrap;gap:15px 34px;margin-bottom:35px}
-.hero-info-item{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:600}
-.hero-info-icon{width:37px;height:37px;border:1px solid rgba(255,255,255,.35);border-radius:8px;display:grid;place-items:center;font-size:17px}
-.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+/* Hero */
+.hero{position:relative;min-height:660px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+  background:linear-gradient(180deg,rgba(8,26,48,.62) 0%,rgba(10,34,60,.58) 45%,rgba(8,26,48,.82) 100%),var(--hero-img) center 62%/cover no-repeat}
+.hero .wrap{padding-top:90px;padding-bottom:150px;max-width:900px}
+.hero-badge{display:inline-block;margin-bottom:26px;padding:7px 18px;font-size:14px;font-weight:500;border:1px solid rgba(255,255,255,.45);border-radius:999px;background:rgba(255,255,255,.1);backdrop-filter:blur(6px)}
+.hero h1{color:#fff;font-size:clamp(40px,6vw,72px);line-height:1.08;letter-spacing:-.025em;text-wrap:balance;margin-bottom:26px;text-shadow:0 2px 24px rgba(0,0,0,.3)}
+.hero-description{font-size:19px;line-height:1.7;max-width:640px;margin:0 auto 38px;color:#E6EEF5}
+.hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.photo-credit{position:absolute;right:20px;bottom:78px;font-size:12px;color:rgba(255,255,255,.88);background:rgba(8,26,48,.5);padding:4px 10px;border-radius:6px}
+.photo-credit:hover{color:#fff;text-decoration:underline}
 
-/* QUICK FACTS */
-.facts{position:relative;margin-top:-45px;z-index:2}
-.facts-panel{background:#fff;border-radius:13px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(3,1fr);padding:30px 20px;border:1px solid var(--line)}
-.fact{padding:7px 24px;border-right:1px solid var(--line)}
+/* Quick facts */
+.facts{position:relative;z-index:2;margin-top:-64px}
+.facts-panel{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-radius:14px;padding:28px 12px;box-shadow:0 24px 60px rgba(12,35,64,.16);border-top:3px solid var(--teal)}
+.fact{padding:6px 28px;border-right:1px solid var(--line)}
 .fact:last-child{border-right:0}
-.fact-label{display:block;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:9px}
-.fact strong{font-family:Manrope,sans-serif;font-size:16px;color:var(--navy)}
-.fact p{font-size:13px;line-height:1.65;color:var(--muted);margin:6px 0 0}
+.fact-label{display:block;font-size:14px;font-weight:600;color:var(--teal);margin-bottom:4px}
+.fact strong{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--navy)}
+.fact p{font-size:14.5px;line-height:1.65;color:var(--muted);margin:6px 0 0}
 
-/* OVERVIEW */
-.overview{background:#fff}
-.overview-grid{display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:80px}
-.overview-copy p{font-size:16px;line-height:1.95;color:var(--muted);margin:0 0 20px}
-.overview-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:35px;position:relative}
-.overview-card:before{content:"";width:60px;height:4px;border-radius:4px;background:var(--teal);display:block;margin-bottom:25px}
-.overview-card h3{font-size:20px;margin:0 0 20px;color:var(--navy)}
-.highlight-row{display:flex;gap:15px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
+/* Overview */
+.overview-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:80px;align-items:start}
+.overview-copy p{font-size:17px;color:var(--muted);margin:0 0 18px}
+.overview-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:32px}
+.overview-card h3{font-size:21px;margin-bottom:12px}
+.highlight-row{display:flex;gap:15px;padding:16px 0;border-bottom:1px solid var(--line)}
 .highlight-row:last-child{border-bottom:0}
-.highlight-icon{width:38px;height:38px;display:grid;place-items:center;background:var(--teal-light);color:var(--teal);border-radius:9px;font-size:18px;flex-shrink:0}
-.highlight-row strong{font-size:14px;color:var(--navy)}
-.highlight-row p{font-size:12px;color:var(--muted);line-height:1.7;margin:5px 0 0}
+.highlight-icon{width:38px;height:38px;flex-shrink:0;display:grid;place-items:center;background:var(--teal-soft);color:var(--teal);border-radius:9px;font-size:18px}
+.highlight-row strong{font-size:15px;color:var(--navy)}
+.highlight-row p{font-size:14.5px;color:var(--muted);margin:3px 0 0;line-height:1.65}
 
-/* PROGRAMME */
-.programme{background:var(--bg)}
-.programme-header{text-align:center;margin-bottom:38px}
+/* Programme */
+.programme{background:linear-gradient(180deg,#E9F0F6,#DFE9F1)}
+.programme-header{text-align:center}
+.programme-header .section-heading:after{left:50%;transform:translateX(-50%)}
 .programme-header .section-intro{margin:0 auto}
-.day-tabs{display:flex;justify-content:center;gap:12px;margin:35px auto 38px}
-.day-tab{min-width:205px;padding:17px 27px;border:1px solid var(--line);background:#fff;border-radius:10px;cursor:pointer;color:var(--muted);text-align:left;transition:.2s}
-.day-tab span{display:block;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;font-weight:800;margin-bottom:5px}
-.day-tab strong{font-family:Manrope,sans-serif;font-size:16px;color:var(--navy)}
-.day-tab.active{background:var(--navy);border-color:var(--navy);box-shadow:0 10px 25px rgba(16,43,70,.15)}
-.day-tab.active span{color:#A8CDCF}
-.day-tab.active strong{color:#fff}
+.day-tabs{display:flex;justify-content:center;gap:12px;margin:34px 0}
+.day-tab{min-width:210px;padding:16px 26px;border:1px solid var(--line);background:#fff;border-radius:12px;cursor:pointer;text-align:left;color:var(--muted);transition:border-color .2s}
+.day-tab span{display:block;font-size:13px;font-weight:500}
+.day-tab strong{font-family:var(--serif);font-size:18px;color:var(--navy)}
 .day-tab:hover:not(.active){border-color:var(--teal)}
-.day-panel{display:none;animation:fadeIn .3s ease}
-.day-panel.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
-.schedule{background:#fff;border-radius:var(--radius);border:1px solid var(--line);box-shadow:0 8px 30px rgba(16,43,70,.035);overflow:hidden}
-.schedule-head{padding:24px 30px;background:#EEF4F7;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.schedule-head h3{margin:0;font-size:19px;color:var(--navy)}
-.schedule-head span{font-size:12px;color:var(--muted);font-weight:600}
-.session{display:grid;grid-template-columns:145px 1fr;gap:24px;padding:24px 30px;border-bottom:1px solid var(--line);align-items:start}
+.day-tab.active{background:var(--navy);border-color:var(--navy);box-shadow:0 12px 28px rgba(12,35,64,.25)}
+.day-tab.active span{color:#B5D3D6}
+.day-tab.active strong{color:#fff}
+.day-panel[hidden]{display:none}
+.schedule{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 12px 40px rgba(12,35,64,.06)}
+.schedule-head{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 30px;background:#EEF4F8;border-bottom:1px solid var(--line)}
+.schedule-head h3{font-size:20px}
+.schedule-head span{font-size:13.5px;color:var(--muted)}
+.session{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 30px;border-bottom:1px solid var(--line);border-left:4px solid var(--teal)}
 .session:last-child{border-bottom:0}
-.session-time{font-size:13px;font-weight:800;color:var(--teal);padding-top:4px}
-.session-time span{display:block}
-.session-duration{margin-top:5px;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.02em}
-.session h4{font-size:15px;margin:0 0 7px;color:var(--navy);line-height:1.5}
-.session p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
-.session-tag{display:inline-block;margin-top:10px;font-size:10px;letter-spacing:.6px;text-transform:uppercase;font-weight:800;color:var(--teal);background:var(--teal-light);padding:6px 10px;border-radius:5px}
-.session.break{background:#FAFCFD}
-.session.break h4{color:#748393}
-.programme-note{text-align:center;font-size:12px;color:var(--muted);margin-top:25px}
+.session.break{border-left-color:var(--gold);background:#FAFCFD}
+.session-time{font-size:14.5px;font-weight:600;color:var(--navy)}
+.session-time small{display:block;font-size:13px;font-weight:400;color:var(--muted)}
+.session h4{font-family:var(--sans);font-size:16.5px;font-weight:600;letter-spacing:0;margin-bottom:4px}
+.session.break h4{color:#6B7C8C}
+.session p{font-size:14.5px;color:var(--muted);margin:0;line-height:1.65}
+.programme-note{text-align:center;font-size:13.5px;color:var(--muted);margin:26px 0 0}
 
-/* VENUE */
-/*
-.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.venue-photo{height:400px;background:linear-gradient(0deg,rgba(16,43,70,.22),rgba(16,43,70,.05)),url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85") center/cover;border-radius:var(--radius)}
-.venue-text p{font-size:15px;line-height:1.9;color:var(--muted)}
-.venue-address{display:flex;gap:13px;padding:20px;background:var(--bg);border:1px solid var(--line);border-radius:10px;margin:25px 0}
-.venue-address-icon{font-size:22px}
-.venue-address strong{display:block;color:var(--navy);font-size:15px;margin-bottom:5px}
-.venue-address span{font-size:13px;line-height:1.75;color:var(--muted)}
-.venue-links{display:flex;gap:12px;flex-wrap:wrap}
-*/
-/* GETTING THERE */
-/*
-.travel{background:var(--bg)}
-.travel-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:35px;align-items:stretch}
-.travel-cards{display:flex;flex-direction:column;gap:14px}
-.travel-card{padding:23px;background:#fff;border:1px solid var(--line);border-radius:11px;display:flex;gap:17px}
-.travel-card-icon{background:var(--teal-light);color:var(--teal);width:44px;height:44px;display:grid;place-items:center;border-radius:9px;font-size:21px;flex-shrink:0}
-.travel-card h3{font-size:15px;color:var(--navy);margin:0 0 7px}
-.travel-card p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}
-.map-wrap{background:#fff;padding:8px;border-radius:13px;border:1px solid var(--line);min-height:400px;box-shadow:var(--shadow)}
-.map-wrap iframe{width:100%;height:100%;min-height:400px;border:0;border-radius:8px;display:block}
-*/
-  
-/* =========================================
-   VENUE & DIRECTIONS
-   ========================================= */
+/* Venue */
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center;margin-top:28px}
+.venue-text h3{font-size:28px;margin-bottom:16px}
+.venue-text p{font-size:17px;color:var(--muted);margin:0 0 16px}
+.venue-address{display:flex;gap:15px;padding:20px 22px;margin:24px 0;background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:10px}
+.venue-address-icon{font-size:24px;line-height:1.2;color:var(--teal)}
+.venue-address strong{display:block;color:var(--navy);margin-bottom:4px}
+.venue-address span{font-size:14.5px;color:var(--muted)}
+.venue-links{display:flex;flex-wrap:wrap;gap:12px}
+.venue-hint{font-size:13.5px!important;margin:20px 0 0!important}
+.map-wrap{height:430px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px rgba(12,35,64,.1);overflow:hidden}
+.map-wrap iframe{display:block;width:100%;height:100%;border:0;border-radius:9px}
 
-.venue{background:#fff;}
-.venue-grid{display:grid;grid-template-columns:1fr 1fr; gap:55px;align-items:center;margin-top:28px;}
-.venue-text h3{font-family:var(--serif);font-size:27px;font-weight:600;line-height:1.3;color:var(--navy);margin:0 0 20px;}
-.venue-text p{font-size:16px;line-height:1.85;color:var(--muted);margin:0 0 18px;}
-.venue-address{display:flex;align-items:flex-start;gap:15px;padding:20px 22px;margin:25px 0;background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:10px;}
-.venue-address-icon{font-size:24px;line-height:1.2;color:var(--teal);}
-.venue-address strong{display:block;font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;}
-.venue-address span{font-size:13.5px;line-height:1.8;color:var(--muted);}
-.venue-links{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:25px;}
-.btn-venue{background:#fff;color:var(--navy);border:1px solid #C7D8E4;box-shadow:none;}
-.btn-venue:hover{background:var(--bg);border-color:var(--teal);color:var(--teal);transform:translateY(-2px);}
-.venue-text .venue-hint{font-size:12.5px;line-height:1.7;color:var(--muted);margin:20px 0 0;}
-
-/* Embedded Google Map */
-
-.map-wrap{
-  background:#fff;
-  padding:8px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  box-shadow:0 18px 45px rgba(12,35,64,.09);
-  height:430px;
-  overflow:hidden;
-}
-
-.map-wrap iframe{
-  display:block;
-  width:100%;
-  height:100%;
-  border:0;
-  border-radius:9px;
-}
-
-/* Responsive */
-
-@media(max-width:850px){.venue-grid{grid-template-columns:1fr;gap:32px;}
-.map-wrap{height:380px;}}
-
-@media(max-width:550px){.venue-grid{margin-top:20px;}
-  .venue-text h3{font-size:24px;}
-  .venue-links{flex-direction:column;align-items:stretch;}
-  .venue-links .btn{width:100%;}
-  .map-wrap{height:330px;}}
-
-/* REGISTRATION */
-.registration{background:var(--navy);color:#fff;padding:75px 0;text-align:center}
-.registration h2{font-size:clamp(28px,3.2vw,39px);margin:0 0 16px;color:#fff}
-.registration p{font-size:15px;line-height:1.9;color:#CBDCE6;max-width:650px;margin:0 auto 28px}
-
-/* FOOTER */
-footer{background:#0A2035;color:#AFC4D4;padding:35px 0}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}
-.footer-inner strong{font-family:Manrope,sans-serif;color:#fff;font-size:14px}
-.footer-inner p{font-size:12px;line-height:1.8;margin:7px 0 0}
+/* Registration + footer */
+.registration{text-align:center;padding:96px 0;color:#fff;background:radial-gradient(700px 360px at 85% 0%,rgba(10,127,136,.45),transparent 65%),linear-gradient(135deg,#0A1E38,#0F3050)}
+.registration h2{color:#fff;font-size:clamp(28px,3.4vw,40px);margin-bottom:16px}
+.registration p{max-width:640px;margin:0 auto 28px;color:#CBDCE6;font-size:17px}
+footer{background:#07182B;color:#AFC4D4;padding:34px 0;border-top:3px solid var(--teal)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.footer-inner strong{font-family:var(--serif);font-size:16px;color:#fff}
+.footer-inner p{font-size:13.5px;margin:4px 0 0}
 .footer-links{display:flex;gap:22px}
-.footer-links a{font-size:12px;color:#AFC4D4}
+.footer-links a{font-size:14px}
 .footer-links a:hover{color:#fff}
 
-/* MOBILE */
 @media(max-width:850px){
   .mobile-toggle{display:block}
-  .nav-links{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;padding:22px 28px;flex-direction:column;align-items:flex-start;gap:22px;border-bottom:1px solid var(--line);box-shadow:0 15px 30px rgba(0,0,0,.06)}
+  .nav-links{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:20px;padding:22px 28px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 15px 30px rgba(0,0,0,.06)}
   .nav-links.open{display:flex}
-  .overview-grid,.venue-grid,.travel-grid{grid-template-columns:1fr;gap:35px}
+  .overview-grid,.venue-grid{grid-template-columns:1fr;gap:36px}
   .facts-panel{grid-template-columns:1fr}
-  .fact{border-right:0;border-bottom:1px solid var(--line);padding:18px}
+  .fact{border-right:0;border-bottom:1px solid var(--line);padding:16px 18px}
   .fact:last-child{border-bottom:0}
-  .hero{min-height:540px}
-  .hero h1{font-size:45px}
-  section{padding:70px 0}
+  .hero{min-height:600px}
+  .map-wrap{height:380px}
+  section{padding:72px 0}
 }
 @media(max-width:550px){
   .wrap{padding:0 20px}
-  .brand-text strong{font-size:12px}
-  .brand-text span{font-size:10px}
-  .hero h1{font-size:36px}
-  .hero .wrap{padding-top:65px;padding-bottom:95px}
-  .hero-info{flex-direction:column;align-items:flex-start;gap:16px}
-  .facts{margin-top:-35px}
+  .brand-text strong{font-size:14px}
+  .hero .wrap{padding-top:70px;padding-bottom:140px}
+  .hero-description{font-size:17px}
   .day-tabs{gap:8px}
   .day-tab{min-width:0;width:50%;padding:14px}
-  .day-tab strong{font-size:13px}
-  .session{grid-template-columns:1fr;gap:7px;padding:20px}
-  .schedule-head{padding:20px;flex-direction:column;align-items:flex-start;gap:5px}
-  .venue-photo{height:290px}
+  .day-tab strong{font-size:15px}
+  .schedule-head{flex-direction:column;align-items:flex-start;gap:4px;padding:20px}
+  .session{grid-template-columns:1fr;gap:6px;padding:20px}
+  .venue-links{flex-direction:column}
+  .venue-links .btn{width:100%}
+  .map-wrap{height:330px}
   .footer-inner{flex-direction:column;align-items:flex-start}
 }
-
-:root{
-  --navy:#0C2340;
-  --navy2:#14375A;
-  --teal:#0A8A92;
-  --teal-light:#E4F3F3;
-  --gold:#C9A25E;
-  --text:#22364A;
-  --muted:#556A7E;
-  --bg:#F3F7FA;
-  --serif:"Fraunces",Georgia,serif;
-  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-  --wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='320' viewBox='0 0 1200 320'%3E%3Cg fill='none' stroke='%23ffffff'%3E%3Cpath stroke-opacity='.14' stroke-width='1.6' d='M0 160 C100 40 200 280 300 160 S500 40 600 160 S800 280 900 160 S1100 40 1200 160'/%3E%3Cpath stroke-opacity='.09' stroke-width='1.2' d='M0 185 C120 90 180 280 300 185 S480 90 600 185 S780 280 900 185 S1080 90 1200 185'/%3E%3Cpath stroke-opacity='.06' stroke-width='1' d='M0 130 C80 20 220 240 300 130 S520 20 600 130 S820 240 900 130 S1120 20 1200 130'/%3E%3C/g%3E%3C/svg%3E");
-  --dots:radial-gradient(rgba(12,35,64,.09) 1px,transparent 1.2px);
-}
-
-/* ---------- Typography ---------- */
-body{font-family:var(--sans);font-size:16px;line-height:1.7;color:var(--text)}
-h1,h2,h3,h4{font-family:var(--serif);letter-spacing:-.015em;font-weight:600}
-.hero h1{font-weight:600;line-height:1.1;letter-spacing:-.025em;text-wrap:balance}
-.hero h1 em,.hero h1 span{color:var(--gold);font-style:italic}
-.section-heading{font-size:clamp(30px,3.4vw,44px);line-height:1.2;position:relative;padding-bottom:18px}
-.section-heading:after{content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),transparent)}
-.programme-header .section-heading:after{left:50%;transform:translateX(-50%)}
-.section-label{font-family:var(--mono);font-size:12px;letter-spacing:.18em;font-weight:600}
-.section-intro,.overview-copy p,.venue-text p{font-size:17px;line-height:1.75}
-.hero-description{font-size:18px;line-height:1.75;color:#D9E6F0}
-.session p,.travel-card p,.fact p,.highlight-row p{font-size:14.5px;line-height:1.7}
-.session h4{font-size:16.5px}
-.session-time,.fact-label,.day-tab span,.session-tag,.brand-text span,.hero-eyebrow{font-family:var(--mono)}
-
-/* ---------- Header ---------- */
-.site-header{background:rgba(255,255,255,.88);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 1px 0 var(--line),0 8px 30px rgba(12,35,64,.04)}
-.brand-mark{background:linear-gradient(135deg,var(--navy),var(--teal));box-shadow:0 6px 16px rgba(10,138,146,.3)}
-.nav-links a:not(.nav-register){position:relative}
-.nav-links a:not(.nav-register):after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .25s}
-.nav-links a:not(.nav-register):hover:after{width:100%}
-.nav-links .nav-register{background:linear-gradient(135deg,var(--navy),var(--navy2));box-shadow:0 6px 18px rgba(12,35,64,.25)}
-
-/* ---------- Hero: layered waveform + glows ---------- */
-.hero{
-  background:
-    var(--wave) center 72%/1500px auto repeat-x,
-    radial-gradient(900px 520px at 88% 8%,rgba(10,138,146,.50),transparent 62%),
-    radial-gradient(700px 420px at 0% 105%,rgba(201,162,94,.22),transparent 60%),
-    linear-gradient(115deg,rgba(8,26,48,.97) 0%,rgba(13,42,70,.93) 55%,rgba(8,60,78,.82) 100%),
-    url("https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
-}
-.hero-eyebrow{color:#BFE6E4;letter-spacing:.2em}
-.hero-info-icon{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.28);backdrop-filter:blur(6px)}
-.btn{border-radius:10px;letter-spacing:.01em}
-.btn-primary{background:linear-gradient(135deg,var(--teal),#0B6F8A);box-shadow:0 10px 26px rgba(10,138,146,.38)}
-.btn-primary:hover{background:linear-gradient(135deg,#0C9AA3,#0B7A96);box-shadow:0 14px 32px rgba(10,138,146,.5)}
-.btn-outline{backdrop-filter:blur(6px);background:rgba(255,255,255,.05)}
-
-/* ---------- Quick facts: glass panel with gold top rule ---------- */
-.facts-panel{border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.94);backdrop-filter:blur(14px);box-shadow:0 24px 60px rgba(12,35,64,.14);position:relative;overflow:hidden}
-.facts-panel:before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold))}
-.fact strong{font-family:var(--serif);font-size:18px;font-weight:600}
-
-/* ---------- Section backgrounds (no more flat white) ---------- */
-.overview{
-  background:
-    radial-gradient(600px 300px at 100% 0%,rgba(10,138,146,.07),transparent 70%),
-    radial-gradient(500px 300px at 0% 100%,rgba(201,162,94,.08),transparent 70%),
-    #fff;
-}
-.programme{background:linear-gradient(180deg,#E5EDF4,#DBE7F0)}
-.travel{background:linear-gradient(180deg,#E5EDF4,#DBE7F0)}
-.registration{
-  background:
-    var(--wave) center/1400px auto repeat-x,
-    radial-gradient(700px 360px at 85% 0%,rgba(10,138,146,.4),transparent 65%),
-    linear-gradient(135deg,#0A1E38,#0F3050);
-  padding:96px 0;
-}
-.registration h2{font-weight:600}
-
-/* ---------- Cards & depth ---------- */
-.overview-card,.travel-card,.venue-address,.schedule{box-shadow:0 12px 40px rgba(12,35,64,.06);border-color:#DDE6EE}
-.overview-card{background:linear-gradient(180deg,#fff,#F6FAFC)}
-.overview-card:before{background:linear-gradient(90deg,var(--teal),var(--gold));width:72px}
-.travel-card{transition:transform .25s,box-shadow .25s,border-color .25s}
-.travel-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(12,35,64,.11);border-color:var(--teal)}
-.highlight-icon,.travel-card-icon{background:linear-gradient(135deg,var(--teal-light),#fff);border:1px solid #CFE8E8}
-.venue-photo{box-shadow:0 30px 60px rgba(12,35,64,.2);position:relative}
-.venue-photo:after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--gold);border-radius:var(--radius);z-index:-1;opacity:.7}
-.venue-grid{padding-right:14px}
-.map-wrap{box-shadow:0 20px 50px rgba(12,35,64,.1)}
-
-/* ---------- Programme: timeline feel ---------- */
-.day-tab{border-radius:12px;box-shadow:0 4px 14px rgba(12,35,64,.04)}
-.day-tab.active{background:linear-gradient(135deg,var(--navy),var(--navy2));box-shadow:0 14px 30px rgba(12,35,64,.28)}
-.day-tab strong{font-family:var(--serif);font-size:17px}
-.schedule-head{background:linear-gradient(90deg,#E9F1F6,#F4F8FB);border-bottom:1px solid var(--line)}
-.session{position:relative;transition:background .2s}
-.session:hover{background:#F8FBFD}
-.session:before{content:"";position:absolute;left:171px;top:31px;width:9px;height:9px;border-radius:50%;background:#fff;border:2px solid var(--teal)}
-.session:after{content:"";position:absolute;left:175px;top:44px;bottom:-31px;width:1px;background:var(--line)}
-.session:last-child:after{display:none}
-.session{grid-template-columns:145px 1fr;padding-left:30px}
-.session > div:last-child,.session > :nth-child(2){padding-left:34px}
-.session-time{font-size:13px;letter-spacing:.02em}
-.session-tag{border-radius:999px;padding:5px 12px;font-size:10.5px}
-.session.break:before{border-color:var(--gold);background:var(--gold)}
-
-/* ---------- Footer ---------- */
-footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90deg,var(--teal),var(--gold)) 1}
-
-/* ---------- Mobile adjustments ---------- */
-@media(max-width:850px){
-  .venue-grid{padding-right:0}
-  .venue-photo:after{display:none}
-}
-@media(max-width:550px){
-  .session:before,.session:after{display:none}
-  .session > div:last-child,.session > :nth-child(2){padding-left:0}
-  body{font-size:15.5px}
-}
-
-/* ---------- Accessibility ---------- */
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-}
-  
-.section-label{font-weight:700}
-.fact-label{font-weight:700}
-.session-time{font-weight:700}
-.session-tag{font-weight:800}
-.highlight-icon{font-weight:800}
-.venue-address-icon{font-weight:800}
-
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <header class="site-header">
   <div class="wrap nav-inner">
     <a class="brand" href="#home">
       <div class="brand-mark">ASP</div>
       <div class="brand-text">
         <strong>Australian Signal Processing Meeting</strong>
-        <span>Gold Coast · 2026</span>
+        <span>Gold Coast 2026</span>
       </div>
     </a>
-
     <button class="mobile-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-
-    
-<nav class="nav-links" id="navLinks">
-  <a href="#overview">Overview</a>
-  <a href="#programme">Programme</a>
-  <a href="#venue">Venue & Directions</a>
-  <a class="nav-register" href="https://www.eventbrite.com.au/e/australian-signal-processing-meeting-tickets-2003494324457" target="_blank" rel="noopener noreferrer">Register ↗</a>
-</nav>
-
+    <nav class="nav-links" id="navLinks">
+      <a href="#overview">Overview</a>
+      <a href="#programme">Programme</a>
+      <a href="#venue">Venue &amp; Directions</a>
+      <a class="nav-register" href="https://www.eventbrite.com.au/e/australian-signal-processing-meeting-tickets-2003494324457" target="_blank" rel="noopener noreferrer">Register ↗</a>
+    </nav>
   </div>
 </header>
 
-<!-- HERO -->
 <main id="home">
+
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-eyebrow">Australian Research Community · 2026</div>
-
-    <h1>Australian Signal<br>Processing Meeting</h1>
-
+    <div class="hero-badge">Inaugural meeting</div>
+    <h1>Australian Signal Processing Meeting</h1>
     <p class="hero-description">
-      Bring Australia's signal processing community together to share recent research, discuss emerging applications and foster new collaborations.
+      Bringing Australia’s signal processing community together to share recent research, discuss emerging applications and build new collaborations.
     </p>
-
-    <div class="hero-info">
-      <div class="hero-info-item">
-        <div class="hero-info-icon">▦</div>
-        <span>8–9 December 2026</span>
-      </div>
-      <div class="hero-info-item">
-        <div class="hero-info-icon">◷</div>
-        <span>9:00 AM – 5:00 PM AEST</span>
-      </div>
-      <div class="hero-info-item">
-        <div class="hero-info-icon">⌖</div>
-        <span>Sea World Resort, Gold Coast</span>
-      </div>
-    </div>
-
     <div class="hero-actions">
-      <a class="btn btn-primary" href="https://www.eventbrite.com.au/e/australian-signal-processing-meeting-tickets-2003494324457" target="_blank" rel="noopener noreferrer">Register for the Meeting ↗</a>
-      <a class="btn btn-outline" href="#programme">Explore Programme ↓</a>
+      <a class="btn btn-primary" href="https://www.eventbrite.com.au/e/australian-signal-processing-meeting-tickets-2003494324457" target="_blank" rel="noopener noreferrer">Register for the meeting</a>
+      <a class="btn btn-ghost" href="#programme">View programme</a>
     </div>
   </div>
+  <a class="photo-credit" href="https://unsplash.com/photos/city-skyline-on-the-coast-at-sunrise-with-ocean-waves-YiaGblobOGI" target="_blank" rel="noopener noreferrer">Photo: Gold Coast skyline, Unsplash</a>
 </section>
 
-<!-- EVENT FACTS -->
+<!-- QUICK FACTS -->
 <div class="facts">
   <div class="wrap">
     <div class="facts-panel">
@@ -453,65 +224,38 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
         <p>Main Beach, Gold Coast<br>Queensland, Australia</p>
       </div>
       <div class="fact">
-        <span class="fact-label">Meeting Format</span>
-        <strong>Two-Day Workshop</strong>
-        <p>Research presentations, discussions<br>and networking opportunities</p>
+        <span class="fact-label">Format</span>
+        <strong>Two-day workshop</strong>
+        <p>Research presentations, discussions<br>and networking</p>
       </div>
     </div>
   </div>
 </div>
 
 <!-- OVERVIEW -->
-<section id="overview" class="overview">
+<section id="overview">
   <div class="wrap overview-grid">
     <div class="overview-copy">
-      <span class="section-label">About the Meeting</span>
+      <span class="section-label">About the meeting</span>
       <h2 class="section-heading">Overview</h2>
-
-      <p>
-        The Australian Signal Processing Meeting aims to bring together the Australian research community in signal processing and related fields to present and discuss recent research advances and emerging applications. 
-        It seeks to foster scientific exchange, encourage open discussion, and establish new research collaborations to strengthen signal processing research in Australia.
-      </p>
-
-      <p>
-        The inaugural meeting will feature oral presentations and group discussions, providing participants with an opportunity to share their research, exchange ideas, and explore emerging challenges and applications. 
-        Subject to the success of this first event and the level of interest from the research community, the meeting is intended to become an annual event.
-      </p>
-
-      <p>
-        Registration will include morning tea, lunch and afternoon tea on both workshop days, as well as venue hire and workshop stationery (pens and notepads).
-        It will also include the workshop dinner on 8 December, featuring an alternate-drop menu and a three-hour beverage package.
-      </p>
-      <p>
-      A registration option that includes two nights’ accommodation (7 and 8 December), with breakfast included, will also be available.
-      </p>
+      <p>The Australian Signal Processing Meeting aims to bring together the Australian research community in signal processing and related fields to present and discuss recent research advances and emerging applications. It seeks to foster scientific exchange, encourage open discussion, and establish new research collaborations to strengthen signal processing research in Australia.</p>
+      <p>The inaugural meeting will feature oral presentations and group discussions, providing participants with an opportunity to share their research, exchange ideas, and explore emerging challenges and applications. Subject to the success of this first event and the level of interest from the research community, the meeting is intended to become an annual event.</p>
+      <p>Registration includes morning tea, lunch and afternoon tea on both workshop days, venue hire and workshop stationery (pens and notepads). It also includes the workshop dinner on 8 December, featuring an alternate-drop menu and a three-hour beverage package.</p>
+      <p>A registration option that includes two nights’ accommodation (7 and 8 December), with breakfast included, is also available.</p>
     </div>
-
     <aside class="overview-card">
-      <h3>Meeting Highlights</h3>
-
+      <h3>Meeting highlights</h3>
       <div class="highlight-row">
         <div class="highlight-icon">✦</div>
-        <div>
-          <strong>Research Exchange</strong>
-          <p>Share ideas and emerging developments in signal processing.</p>
-        </div>
+        <div><strong>Research exchange</strong><p>Share ideas and emerging developments in signal processing.</p></div>
       </div>
-
       <div class="highlight-row">
         <div class="highlight-icon">◎</div>
-        <div>
-          <strong>Technical Discussions</strong>
-          <p>Engage in discussions and exchange perspectives with researchers.</p>
-        </div>
+        <div><strong>Technical discussions</strong><p>Engage in discussions and exchange perspectives with researchers.</p></div>
       </div>
-
       <div class="highlight-row">
         <div class="highlight-icon">◇</div>
-        <div>
-          <strong>Community & Networking</strong>
-          <p>Strengthen research connections and explore collaborations.</p>
-        </div>
+        <div><strong>Community and networking</strong><p>Strengthen research connections and explore collaborations.</p></div>
       </div>
     </aside>
   </div>
@@ -521,454 +265,99 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
 <section id="programme" class="programme">
   <div class="wrap">
     <div class="programme-header">
-      <span class="section-label">Meeting Schedule</span>
+      <span class="section-label">Meeting schedule</span>
       <h2 class="section-heading">Programme</h2>
-      <p class="section-intro">
-        Explore the two-day meeting programme. Select a day below to view its sessions and activities.
-      </p>
+      <p class="section-intro">Explore the two-day meeting programme. Select a day to view its sessions and activities.</p>
     </div>
 
     <div class="day-tabs" role="tablist" aria-label="Programme days">
       <button class="day-tab active" id="tab-day1" role="tab" aria-controls="day1" aria-selected="true" onclick="showDay(1)">
-        <span>Day 01 · Tuesday</span>
-        <strong>8 December</strong>
+        <span>Day 1 · Tuesday</span><strong>8 December</strong>
       </button>
       <button class="day-tab" id="tab-day2" role="tab" aria-controls="day2" aria-selected="false" onclick="showDay(2)">
-        <span>Day 02 · Wednesday</span>
-        <strong>9 December</strong>
+        <span>Day 2 · Wednesday</span><strong>9 December</strong>
       </button>
     </div>
 
-    
-<!-- DAY ONE: EXAMPLE PROGRAMME -->
-<div class="day-panel active" id="day1" role="tabpanel" aria-labelledby="tab-day1">
-  <div class="schedule">
-    <div class="schedule-head">
-      <h3>Tuesday, 8 December 2026</h3>
-      <span>All times AEST (Queensland time)</span>
-    </div>
-
-    <div class="session">
-      <div class="session-time">
-        <span>08:30 – 09:00</span>
-        <span class="session-duration">30 min</span>
-      </div>
-      <div>
-        <h4>Registration and Welcome</h4>
-        <p>Arrival, registration and opening remarks.</p>
-        <span class="session-tag">Welcome</span>
+    <div class="day-panel" id="day1" role="tabpanel" aria-labelledby="tab-day1">
+      <div class="schedule">
+        <div class="schedule-head"><h3>Tuesday, 8 December 2026</h3><span>All times AEST (Queensland time)</span></div>
+        <div class="session"><div class="session-time">08:30 – 09:00<small>30 min</small></div><div><h4>Registration and welcome</h4><p>Arrival, registration and opening remarks.</p></div></div>
+        <div class="session"><div class="session-time">09:00 – 10:30<small>1.5 hrs</small></div><div><h4>Oral presentations</h4><p>Presentation details to be announced.</p></div></div>
+        <div class="session break"><div class="session-time">10:30 – 11:00<small>30 min</small></div><div><h4>Morning tea</h4><p>Refreshments and informal discussions.</p></div></div>
+        <div class="session"><div class="session-time">11:00 – 12:30<small>1.5 hrs</small></div><div><h4>Oral presentations</h4><p>Presentation details to be announced.</p></div></div>
+        <div class="session break"><div class="session-time">12:30 – 13:30<small>1 hr</small></div><div><h4>Lunch</h4><p>Lunch and networking.</p></div></div>
+        <div class="session"><div class="session-time">13:30 – 15:00<small>1.5 hrs</small></div><div><h4>Oral presentations</h4><p>Presentation details to be announced.</p></div></div>
+        <div class="session break"><div class="session-time">15:00 – 15:30<small>30 min</small></div><div><h4>Afternoon tea</h4><p>Refreshments and discussions.</p></div></div>
+        <div class="session"><div class="session-time">15:30 – 17:00<small>1.5 hrs</small></div><div><h4>Oral presentations</h4><p>Presentation details to be announced.</p></div></div>
+        <div class="session"><div class="session-time">17:00 – 18:00<small>1 hr</small></div><div><h4>Panel discussion</h4><p>Further details to be announced.</p></div></div>
+        <div class="session break"><div class="session-time">19:00 – 22:00<small>3 hrs</small></div><div><h4>Meeting dinner</h4><p>Dinner and networking.</p></div></div>
       </div>
     </div>
 
-    <div class="session">
-      <div class="session-time">
-        <span>09:00 – 10:30</span>
-        <span class="session-duration">1.5 hrs</span>
-      </div>
-      <div>
-        <h4>Oral Presentations Session</h4>
-        <p>Presentation details to be announced.</p>
-        <span class="session-tag">Technical Session</span>
-      </div>
-    </div>
-
-    <div class="session break">
-      <div class="session-time">
-        <span>10:30 – 11:00</span>
-        <span class="session-duration">30 min</span>
-      </div>
-      <div>
-        <h4>Morning Tea</h4>
-        <p>Refreshments and informal discussions.</p>
+    <div class="day-panel" id="day2" role="tabpanel" aria-labelledby="tab-day2" hidden>
+      <div class="schedule">
+        <div class="schedule-head"><h3>Wednesday, 9 December 2026</h3><span>All times AEST (Queensland time)</span></div>
+        <div class="session"><div class="session-time">09:00 – 10:30<small>1.5 hrs</small></div><div><h4>Oral presentations</h4><p>Presentation details to be announced.</p></div></div>
+        <div class="session break"><div class="session-time">10:30 – 11:00<small>30 min</small></div><div><h4>Morning tea</h4><p>Refreshments and informal discussions.</p></div></div>
+        <div class="session"><div class="session-time">11:00 – 12:30<small>1.5 hrs</small></div><div><h4>Oral presentations</h4><p>Presentation details to be announced.</p></div></div>
+        <div class="session break"><div class="session-time">12:30 – 13:30<small>1 hr</small></div><div><h4>Lunch</h4><p>Lunch and networking.</p></div></div>
+        <div class="session"><div class="session-time">13:30 – 15:00<small>1.5 hrs</small></div><div><h4>Oral presentations</h4><p>Presentation details to be announced.</p></div></div>
+        <div class="session break"><div class="session-time">15:00 – 15:30<small>30 min</small></div><div><h4>Afternoon tea</h4><p>Refreshments and informal discussions.</p></div></div>
+        <div class="session"><div class="session-time">15:30 – 17:00<small>1.5 hrs</small></div><div><h4>Final discussions and closing</h4><p>Further details to be announced.</p></div></div>
       </div>
     </div>
 
-    <div class="session">
-      <div class="session-time">
-        <span>11:00 – 12:30</span>
-        <span class="session-duration">1.5 hrs</span>
-      </div>
-      <div>
-        <h4>Oral Presentations Session</h4>
-        <p>Presentation details to be announced.</p>
-        <span class="session-tag">Technical Session</span>
-      </div>
-    </div>
-
-    <div class="session break">
-      <div class="session-time">
-        <span>12:30 – 13:30</span>
-        <span class="session-duration">1 hr</span>
-      </div>
-      <div>
-        <h4>Lunch Break</h4>
-        <p>Lunch and networking.</p>
-      </div>
-    </div>
-
-    <div class="session">
-      <div class="session-time">
-        <span>13:30 – 15:00</span>
-        <span class="session-duration">1.5 hrs</span>
-      </div>
-      <div>
-        <h4>Oral Presentations Session</h4>
-        <p>Presentation details to be announced.</p>
-        <span class="session-tag">Technical Session</span>
-      </div>
-    </div>
-
-    <div class="session break">
-      <div class="session-time">
-        <span>15:00 – 15:30</span>
-        <span class="session-duration">30 min</span>
-      </div>
-      <div>
-        <h4>Afternoon Tea</h4>
-        <p>Refreshments and discussions.</p>
-      </div>
-    </div>
-
-    <div class="session">
-      <div class="session-time">
-        <span>15:30 – 17:00</span>
-        <span class="session-duration">1.5 hrs</span>
-      </div>
-      <div>
-        <h4>Oral Presentations Session</h4>
-        <p>Presentation details to be announced.</p>
-        <span class="session-tag">Technical Session</span>
-      </div>
-    </div>
-
-    <div class="session">
-      <div class="session-time">
-        <span>17:00 – 18:00</span>
-        <span class="session-duration">1 hr</span>
-      </div>
-      <div>
-        <h4>Panel Discussion</h4>
-        <p>Further details to be announced.</p>
-        <span class="session-tag">Discussion</span>
-      </div>
-    </div>
-
-    <div class="session break">
-      <div class="session-time">
-        <span>19:00 – 22:00</span>
-        <span class="session-duration">3 hrs</span>
-      </div>
-      <div>
-        <h4>Meeting Dinner</h4>
-        <p>Dinner and networking.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- DAY TWO: EXAMPLE PROGRAMME -->
-<div class="day-panel" id="day2" role="tabpanel" aria-labelledby="tab-day2" hidden>
-  <div class="schedule">
-    <div class="schedule-head">
-      <h3>Wednesday, 9 December 2026</h3>
-      <span>All times AEST (Queensland time)</span>
-    </div>
-
-    <div class="session">
-      <div class="session-time">
-        <span>09:00 – 10:30</span>
-        <span class="session-duration">1.5 hrs</span>
-      </div>
-      <div>
-        <h4>Oral Presentations Session</h4>
-        <p>Presentation details to be announced.</p>
-        <span class="session-tag">Technical Session</span>
-      </div>
-    </div>
-
-    <div class="session break">
-      <div class="session-time">
-        <span>10:30 – 11:00</span>
-        <span class="session-duration">30 min</span>
-      </div>
-      <div>
-        <h4>Morning Tea</h4>
-        <p>Refreshments and informal discussions.</p>
-      </div>
-    </div>
-
-    <div class="session">
-      <div class="session-time">
-        <span>11:00 – 12:30</span>
-        <span class="session-duration">1.5 hrs</span>
-      </div>
-      <div>
-        <h4>Oral Presentations Session</h4>
-        <p>Presentation details to be announced.</p>
-        <span class="session-tag">Technical Session</span>
-      </div>
-    </div>
-
-    <div class="session break">
-      <div class="session-time">
-        <span>12:30 – 13:30</span>
-        <span class="session-duration">1 hr</span>
-      </div>
-      <div>
-        <h4>Lunch Break</h4>
-        <p>Lunch and networking.</p>
-      </div>
-    </div>
-
-    <div class="session">
-      <div class="session-time">
-        <span>13:30 – 15:00</span>
-        <span class="session-duration">1.5 hrs</span>
-      </div>
-      <div>
-        <h4>Oral Presentations Session</h4>
-        <p>Presentation details to be announced.</p>
-        <span class="session-tag">Technical Session</span>
-      </div>
-    </div>
-
-    <div class="session break">
-      <div class="session-time">
-        <span>15:00 – 15:30</span>
-        <span class="session-duration">30 min</span>
-      </div>
-      <div>
-        <h4>Afternoon Tea</h4>
-        <p>Refreshments and informal discussions.</p>
-      </div>
-    </div>
-
-    <div class="session">
-      <div class="session-time">
-        <span>15:30 – 17:00</span>
-        <span class="session-duration">1.5 hrs</span>
-      </div>
-      <div>
-        <h4>Final Discussions and Closing</h4>
-        <p>Further details to be announced.</p>
-        <span class="session-tag">Closing</span>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-    <p class="programme-note">
-      Note: This is an illustrative programme. Confirmed session information will be updated by the organisers.
-    </p>
+    <p class="programme-note">This is an illustrative programme. Confirmed session information will be updated by the organisers.</p>
   </div>
 </section>
 
 <!-- VENUE -->
-  <!--
 <section id="venue">
-  <div class="wrap venue-grid">
-    <div class="venue-photo" role="img" aria-label="Illustrative coastal resort photograph"></div>
-
-    <div class="venue-text">
-      <span class="section-label">Meeting Location</span>
-      <h2 class="section-heading">Venue</h2>
-
-      <p>
-        The Australian Signal Processing Meeting will be held at
-        <strong>Sea World Resort</strong>, located in Main Beach
-        on the Gold Coast, Queensland.
-      </p>
-
-      <p>
-        Situated near the waterfront, the resort provides a welcoming setting for the meeting and offers access
-        to the wider Gold Coast region.
-      </p>
-
-      <div class="venue-address">
-        <div class="venue-address-icon">⌖</div>
-        <div>
-          <strong>Sea World Resort</strong>
-          <span>Seaworld Drive, Main Beach<br>Queensland 4217, Australia</span>
-        </div>
-      </div>
-
-      <div class="venue-links">
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Sea+World+Resort+Main+Beach+QLD" target="_blank" rel="noopener noreferrer">View on Google Maps ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
--->
-<!-- GETTING THERE -->
-  <!--
-<section id="travel" class="travel">
   <div class="wrap">
-    <span class="section-label">Travel Information</span>
-    <h2 class="section-heading">Getting There</h2>
-    <p class="section-intro">
-      Sea World Resort is located in Main Beach on the Gold Coast.
-      Use the map to explore the location and plan your journey.
-    </p>
-
-    <div class="travel-grid">
-      <div class="travel-cards">
-
-        <div class="travel-card">
-          <div class="travel-card-icon">✈</div>
-          <div>
-            <h3>By Air</h3>
-            <p>
-              Gold Coast Airport (OOL) and Brisbane Airport (BNE)
-              are options for interstate and international visitors.
-              Airport transfers, taxis and rideshare services
-              can be used to reach the resort.
-            </p>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-card-icon">➜</div>
-          <div>
-            <h3>By Car</h3>
-            <p>
-              The resort is located on Seaworld Drive,
-              Main Beach. Enter Sea World Resort as your destination
-              in Google Maps for current driving directions.
-              Check parking arrangements with the venue.
-            </p>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-card-icon">▤</div>
-          <div>
-            <h3>Public Transport</h3>
-            <p>
-              Gold Coast public transport includes bus and tram
-              services. Check current routes, connections and
-              timetables before travelling.
-            </p>
-          </div>
-        </div>
-
-        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Sea+World+Resort%2C+Main+Beach%2C+QLD+4217&travelmode=driving" target="_blank" rel="noopener noreferrer">
-          Get Directions on Google Maps ↗
-        </a>
-
-      </div>
-
-      <div class="map-wrap">
-        <iframe
-          title="Google Map showing Sea World Resort, Main Beach, Gold Coast"
-          src="https://www.google.com/maps?q=Sea%20World%20Resort%2C%20Main%20Beach%2C%20QLD&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
--->
-  
-<!-- VENUE & DIRECTIONS -->
-<section id="venue" class="venue">
-  <div class="wrap">
-
-    <span class="section-label">Meeting Location</span>
-    <h2 class="section-heading">Venue & Directions</h2>
+    <span class="section-label">Meeting location</span>
+    <h2 class="section-heading">Venue &amp; Directions</h2>
 
     <div class="venue-grid">
-
-      <!-- Venue information -->
       <div class="venue-text">
-
         <h3>Sea World Resort</h3>
-
-        <p>
-          The ASP Meeting will be held
-          at <strong>Sea World Resort</strong>, located in Main Beach
-          on the Gold Coast, Queensland.
-        </p>
-
-        <p>
-          Situated along the Gold Coast Broadwater, the resort provides a welcoming setting for the meeting.
-          Visitors can use Google Maps to plan their journey by car or public transport.
-        </p>
+        <p>The meeting will be held at <strong>Sea World Resort</strong>, in Main Beach on the Gold Coast, Queensland.</p>
+        <p>Situated along the Gold Coast Broadwater, the resort provides a welcoming setting for the meeting. Use Google Maps to plan your journey by car or public transport.</p>
 
         <div class="venue-address">
           <div class="venue-address-icon">⌖</div>
-
           <div>
             <strong>Sea World Resort</strong>
-            <span>
-              Seaworld Drive, Main Beach<br>
-              Gold Coast, Queensland 4217, Australia
-            </span>
+            <span>Seaworld Drive, Main Beach<br>Gold Coast, Queensland 4217, Australia</span>
           </div>
         </div>
 
         <div class="venue-links">
-
-          <a class="btn btn-primary"
-             href="https://www.google.com/maps/search/?api=1&query=Sea+World+Resort+Main+Beach+QLD"
-             target="_blank"
-             rel="noopener noreferrer">
-            View on Google Maps ↗
-          </a>
-
-          <a class="btn btn-venue"
-             href="https://seaworldresort.com.au/"
-             target="_blank"
-             rel="noopener noreferrer">
-            Sea World Resort Website ↗
-          </a>
-
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Sea+World+Resort+Main+Beach+QLD" target="_blank" rel="noopener noreferrer">View on Google Maps ↗</a>
+          <a class="btn btn-venue" href="https://seaworldresort.com.au/" target="_blank" rel="noopener noreferrer">Sea World Resort website ↗</a>
         </div>
-
-        <p class="venue-hint">
-          For driving directions and public transport options,
-          select the venue in Google Maps.
-        </p>
-
+        <p class="venue-hint">For driving directions and public transport options, select the venue in Google Maps.</p>
       </div>
 
-      <!-- Interactive Google Map -->
       <div class="map-wrap">
-
-        <iframe
-          title="Google Map showing Sea World Resort, Main Beach, Gold Coast"
+        <iframe title="Google Map showing Sea World Resort, Main Beach, Gold Coast"
           src="https://www.google.com/maps?q=Sea%20World%20Resort%2C%20Main%20Beach%2C%20QLD&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen>
-        </iframe>
-
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
-
     </div>
-
   </div>
 </section>
 
 <!-- REGISTRATION -->
 <section class="registration" id="registration">
   <div class="wrap">
-    <span class="section-label" style="color:#9CD5D1">Join Us on the Gold Coast</span>
-    <h2>Australian Signal Processing Meeting 2026</h2>
-    <p>
-      8–9 December 2026 · Sea World Resort, Main Beach, Queensland.
-      We look forward to welcoming the Australian signal processing community.
-    </p>
-    <a class="btn btn-light" href="https://www.eventbrite.com.au/e/australian-signal-processing-meeting-tickets-2003494324457" target="_blank" rel="noopener noreferrer">Event Registration ↗</a>
+    <h2>Join us on the Gold Coast</h2>
+    <p>8–9 December 2026 at Sea World Resort, Main Beach, Queensland. We look forward to welcoming the Australian signal processing community.</p>
+    <a class="btn btn-light" href="https://www.eventbrite.com.au/e/australian-signal-processing-meeting-tickets-2003494324457" target="_blank" rel="noopener noreferrer">Register on Eventbrite ↗</a>
   </div>
 </section>
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="wrap footer-inner">
     <div>
@@ -976,7 +365,7 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
       <p>8–9 December 2026 · Gold Coast, Queensland, Australia</p>
     </div>
     <div class="footer-links">
-      <a href="#home">Back to Top ↑</a>
+      <a href="#home">Back to top</a>
       <a href="#programme">Programme</a>
       <a href="#venue">Venue</a>
     </div>
@@ -985,15 +374,13 @@ footer{background:#07182B;border-top:3px solid;border-image:linear-gradient(90de
 
 <script>
 function showDay(day){
-  document.querySelectorAll(".day-tab").forEach((tab,index)=>{
-    const active=index===day-1;
-    tab.classList.toggle("active",active);
-    tab.setAttribute("aria-selected",String(active));
+  document.querySelectorAll(".day-tab").forEach((tab,i)=>{
+    const on=i===day-1;
+    tab.classList.toggle("active",on);
+    tab.setAttribute("aria-selected",String(on));
   });
-  document.querySelectorAll(".day-panel").forEach((panel,index)=>{
-    const active=index===day-1;
-    panel.classList.toggle("active",active);
-    panel.hidden=!active;
+  document.querySelectorAll(".day-panel").forEach((panel,i)=>{
+    panel.hidden=i!==day-1;
   });
 }
 const menuToggle=document.getElementById("menuToggle");
@@ -1003,7 +390,7 @@ menuToggle.addEventListener("click",()=>{
   menuToggle.setAttribute("aria-expanded",String(open));
   menuToggle.textContent=open?"✕":"☰";
 });
-document.querySelectorAll(".nav-links a").forEach(link=>{
+navLinks.querySelectorAll("a").forEach(link=>{
   link.addEventListener("click",()=>{
     navLinks.classList.remove("open");
     menuToggle.setAttribute("aria-expanded","false");
@@ -1011,6 +398,5 @@ document.querySelectorAll(".nav-links a").forEach(link=>{
   });
 });
 </script>
-
 </body>
 </html>
