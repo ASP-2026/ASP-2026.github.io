@@ -154,6 +154,9 @@ footer{background:#07182B;color:#AFC4D4;padding:35px 0;border-top:3px solid;bord
 .footer-links a{font-size:12px;color:#AFC4D4}
 .footer-links a:hover{color:#fff}
 
+.footer-event-details{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:8px 0 0;font-family:var(--sans);font-size:12px;font-weight:700;color:var(--gold)}
+.footer-event-separator{color:#AFC4D4}
+
 /* RESPONSIVE */
 @media(max-width:850px){.mobile-toggle{display:block}.nav-links{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;padding:22px 28px;flex-direction:column;align-items:flex-start;gap:22px;border-bottom:1px solid var(--line);box-shadow:0 15px 30px rgba(0,0,0,.06)}.nav-links.open{display:flex}.overview-grid,.venue-grid{grid-template-columns:1fr;gap:35px}.venue-grid{padding-right:0}.facts-panel{grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid var(--line);padding:18px}.fact:last-child{border-bottom:0}.hero{min-height:570px}.hero h1{font-size:clamp(40px,6vw,58px)}section{padding:70px 0}.map-wrap{height:380px}}
 @media(max-width:550px){.wrap{padding:0 20px}.brand-text strong{font-size:12px}.brand-text span{font-size:10px}.hero{min-height:560px;background-position:center 50%}.hero .wrap.hero-content{padding:80px 20px 95px}.hero h1{font-size:clamp(33px,8vw,43px)}.hero-eyebrow{font-size:10px;letter-spacing:.1em}.hero-eyebrow:before,.hero-eyebrow:after{width:15px}.hero-description{font-size:15px;line-height:1.7}.hero-actions{flex-direction:column;width:100%}.hero-actions .btn{width:100%;max-width:300px}.hero-photo-credit{right:12px;bottom:43px;font-size:10px}.facts{margin-top:-35px}.day-tabs{gap:8px}.day-tab{min-width:0;width:50%;padding:14px}.day-tab strong{font-size:13px}.session{grid-template-columns:1fr;gap:7px;padding:20px}.session:before,.session:after{display:none}.session > div:last-child,.session > :nth-child(2){padding-left:0}.schedule-head{padding:20px;flex-direction:column;align-items:flex-start;gap:5px}.venue-text h3{font-size:24px}.venue-links{flex-direction:column;align-items:stretch}.venue-links .btn{width:100%}.map-wrap{height:330px}.footer-inner{flex-direction:column;align-items:flex-start}body{font-size:15.5px}}
@@ -164,6 +167,12 @@ footer{background:#07182B;color:#AFC4D4;padding:35px 0;border-top:3px solid;bord
 .registration-photo-credit{position:absolute;right:22px;bottom:14px;z-index:3;font-family:var(--sans);font-size:11px;font-weight:500;color:rgba(255,255,255,.85);background:rgba(10,25,42,.35);padding:5px 10px;border-radius:5px;backdrop-filter:blur(5px);transition:background .2s,color .2s}
 .registration-photo-credit:hover{color:#fff;background:rgba(10,25,42,.7)}
 @media(max-width:550px){.registration-photo-credit{right:12px;bottom:12px;font-size:10px}}
+
+.hero-event-details{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;margin:0 auto 25px;font-family:var(--sans);font-size:18px;font-weight:800;letter-spacing:.01em;color:var(--gold);text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.hero-event-item{display:inline-flex;align-items:center;gap:8px}
+.hero-event-icon{font-size:20px;line-height:1}
+.hero-event-separator{font-size:20px;color:rgba(255,255,255,.75)}
+@media(max-width:550px){.hero-event-details{font-size:14px;gap:8px;margin-bottom:20px}.hero-event-icon{font-size:16px}.hero-event-separator{font-size:16px}}
 
 </style>
 </head>
@@ -192,6 +201,7 @@ footer{background:#07182B;color:#AFC4D4;padding:35px 0;border-top:3px solid;bord
   </div>
 </header>
 
+
 <!-- HERO -->
 <main id="home">
 <section class="hero">
@@ -199,6 +209,19 @@ footer{background:#07182B;color:#AFC4D4;padding:35px 0;border-top:3px solid;bord
     <div class="hero-eyebrow">Australian Research Community · 2026</div>
 
     <h1>Australian Signal<br>Processing Meeting</h1>
+
+    <!-- Event Date & Location -->
+    <div class="hero-event-details">
+      <span class="hero-event-item">
+        <span class="hero-event-icon">📅</span>
+        8–9 December 2026
+      </span>
+      <span class="hero-event-separator">·</span>
+      <span class="hero-event-item">
+        <span class="hero-event-icon">📍</span>
+        Gold Coast, Australia
+      </span>
+    </div>
 
     <p class="hero-description">
       Connecting Australia's signal processing research community
@@ -541,12 +564,18 @@ footer{background:#07182B;color:#AFC4D4;padding:35px 0;border-top:3px solid;bord
 
 </main>
 
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap footer-inner">
     <div>
       <strong>Australian Signal Processing Meeting</strong>
-      <p>8–9 December 2026 · Gold Coast, Queensland, Australia</p>
+
+      <p class="footer-event-details">
+        <span>📅 8–9 December 2026</span>
+        <span class="footer-event-separator">·</span>
+        <span>📍 Gold Coast, Queensland, Australia</span>
+      </p>
     </div>
 
     <div class="footer-links">
@@ -556,6 +585,7 @@ footer{background:#07182B;color:#AFC4D4;padding:35px 0;border-top:3px solid;bord
     </div>
   </div>
 </footer>
+
 
 <script>
 function showDay(day){document.querySelectorAll(".day-tab").forEach((tab,index)=>{const active=index===day-1;tab.classList.toggle("active",active);tab.setAttribute("aria-selected",String(active));});document.querySelectorAll(".day-panel").forEach((panel,index)=>{const active=index===day-1;panel.classList.toggle("active",active);panel.hidden=!active;});}
