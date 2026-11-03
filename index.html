@@ -174,6 +174,12 @@ footer{background:#07182B;color:#AFC4D4;padding:35px 0;border-top:3px solid;bord
 .hero-event-separator{font-size:20px;color:rgba(255,255,255,.75)}
 @media(max-width:550px){.hero-event-details{font-size:14px;gap:8px;margin-bottom:20px}.hero-event-icon{font-size:16px}.hero-event-separator{font-size:16px}}
 
+.registration-event-details{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;margin:0 auto 18px;font-family:var(--sans);font-size:17px;font-weight:800;letter-spacing:.01em;color:var(--gold);text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.registration-event-item{display:inline-flex;align-items:center;gap:8px}
+.registration-event-icon{font-size:19px;line-height:1}
+.registration-event-separator{font-size:19px;color:rgba(255,255,255,.75)}
+@media(max-width:550px){.registration-event-details{font-size:14px;gap:8px;margin-bottom:18px}.registration-event-icon{font-size:16px}.registration-event-separator{font-size:16px}}
+
 </style>
 </head>
 
@@ -541,21 +547,31 @@ footer{background:#07182B;color:#AFC4D4;padding:35px 0;border-top:3px solid;bord
 </section>
 
 
+
 <!-- REGISTRATION -->
 <section class="registration" id="registration">
   <div class="wrap">
     <span class="section-label" style="color:#9CD5D1">Join Us on the Gold Coast</span>
 
     <h2>Australian Signal Processing Meeting 2026</h2>
-     <p class="footer-event-details">
-        <span>📅 8–9 December 2026</span>
-        <span class="footer-event-separator">·</span>
-        <span>📍 Gold Coast, Queensland, Australia</span>
-      </p>
-   
+
+    <!-- Event Date & Location -->
+    <div class="registration-event-details">
+      <span class="registration-event-item">
+        <span class="registration-event-icon">📅</span>
+        8–9 December 2026
+      </span>
+      <span class="registration-event-separator">·</span>
+      <span class="registration-event-item">
+        <span class="registration-event-icon">📍</span>
+        Gold Coast, Australia
+      </span>
+    </div>
+
     <p>
-    We look forward to welcoming the Australian signal processing community.
+      We look forward to welcoming the Australian signal processing community.
     </p>
+
     <a class="btn btn-light" href="https://www.eventbrite.com.au/e/australian-signal-processing-meeting-tickets-2003494324457" target="_blank" rel="noopener noreferrer">Event Registration ↗</a>
   </div>
 
